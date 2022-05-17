@@ -1,75 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220425 21:48:30.207" rpa="false" schemaversion="3">
-<suite id="s1" name="Consulta Google" source="C:\Users\gilmo.gomes\PycharmProjects\133PetsRobotFramework\consulta_google.robot">
-<test id="s1-t1" name="Consulta Google" line="14">
-<kw name="Acessar o Chrome na pagina &lt;https://www.google.com.br&gt;" sourcename="Acessar o ${browser} na pagina &lt;${url}&gt;">
+<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220516 21:59:03.234" rpa="false" schemaversion="3">
+<suite id="s1" name="Consulta Petz" source="C:\Users\gilmo.gomes\PycharmProjects\133PetsRobotFramework\consulta_petz.robot">
+<test id="s1-t1" name="Consulta Produto com Clique na Lupa" line="14">
+<kw name="Dado que acesso o site como cliente">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220425 21:48:30.808" level="INFO">Opening browser 'Chrome' to base url 'https://www.google.com.br'.</msg>
-<status status="PASS" starttime="20220425 21:48:30.807" endtime="20220425 21:48:35.173"/>
+<msg timestamp="20220516 21:59:03.689" level="INFO">Opening browser 'Chrome' to base url 'https://www.petz.com.br'.</msg>
+<status status="PASS" starttime="20220516 21:59:03.689" endtime="20220516 21:59:10.608"/>
 </kw>
-<status status="PASS" starttime="20220425 21:48:30.806" endtime="20220425 21:48:35.173"/>
+<status status="PASS" starttime="20220516 21:59:03.689" endtime="20220516 21:59:10.608"/>
 </kw>
-<kw name="Digitar &quot;Ovos de Páscoa&quot; na pesquisa" sourcename="Digitar &quot;${palavra_chave}&quot; na pesquisa">
+<kw name="Quando escrevo &quot;Ração&quot; na barra de pesquisa" sourcename="Quando escrevo &quot;${palavra_chave}&quot; na barra de pesquisa">
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${palavra_chave}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20220425 21:48:35.174" level="INFO">${palavra_chave} = Ovos de Páscoa</msg>
-<status status="PASS" starttime="20220425 21:48:35.174" endtime="20220425 21:48:35.174"/>
+<msg timestamp="20220516 21:59:10.610" level="INFO">${palavra_chave} = Ração</msg>
+<status status="PASS" starttime="20220516 21:59:10.609" endtime="20220516 21:59:10.610"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>name = q</arg>
+<arg>30000ms</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220516 21:59:10.610" endtime="20220516 21:59:10.636"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>name = q</arg>
 <arg>${palavra_chave}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220425 21:48:35.175" level="INFO">Typing text 'Ovos de Páscoa' into text field 'name = q'.</msg>
-<status status="PASS" starttime="20220425 21:48:35.175" endtime="20220425 21:48:35.275"/>
+<msg timestamp="20220516 21:59:10.636" level="INFO">Typing text 'Ração' into text field 'name = q'.</msg>
+<status status="PASS" starttime="20220516 21:59:10.636" endtime="20220516 21:59:10.707"/>
 </kw>
+<status status="PASS" starttime="20220516 21:59:10.609" endtime="20220516 21:59:10.708"/>
+</kw>
+<kw name="E clico no botao da lupa">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>class = button-search</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220516 21:59:10.708" level="INFO">Clicking button 'class = button-search'.</msg>
+<status status="PASS" starttime="20220516 21:59:10.708" endtime="20220516 21:59:10.772"/>
+</kw>
+<status status="PASS" starttime="20220516 21:59:10.708" endtime="20220516 21:59:10.772"/>
+</kw>
+<kw name="Entao exibe um grid e a frase do resultado esperado">
+<kw name="Convert To Upper Case" library="String">
+<var>${palavra_chave_upper}</var>
+<arg>${palavra_chave}</arg>
+<doc>Converts string to upper case.</doc>
+<msg timestamp="20220516 21:59:10.774" level="INFO">${palavra_chave_upper} = RAÇÃO</msg>
+<status status="PASS" starttime="20220516 21:59:10.773" endtime="20220516 21:59:10.774"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css = h1.h2Categoria.nomeCategoria</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 21:59:10.774" endtime="20220516 21:59:15.892"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>css = h1.h2Categoria.nomeCategoria</arg>
+<arg>RESULTADOS PARA "${palavra_chave_upper}"</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220516 21:59:15.936" level="INFO">Element 'css = h1.h2Categoria.nomeCategoria' contains text 'RESULTADOS PARA "RAÇÃO"'.</msg>
+<status status="PASS" starttime="20220516 21:59:15.892" endtime="20220516 21:59:15.936"/>
+</kw>
+<status status="PASS" starttime="20220516 21:59:10.773" endtime="20220516 21:59:15.936"/>
+</kw>
+<kw name="Feche o browser">
+<msg timestamp="20220516 21:59:15.940" level="FAIL">No keyword with name 'Feche o browser' found.</msg>
+<status status="FAIL" starttime="20220516 21:59:15.940" endtime="20220516 21:59:15.940"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220516 21:59:15.941" endtime="20220516 21:59:18.135"/>
+</kw>
+<tag>rapido</tag>
+<status status="FAIL" starttime="20220516 21:59:03.688" endtime="20220516 21:59:18.136">No keyword with name 'Feche o browser' found.</status>
+</test>
+<test id="s1-t2" name="Consulta Produto Apertando Enter" line="22">
+<kw name="Dado que acesso o site como cliente">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 21:59:18.140" level="INFO">Opening browser 'Chrome' to base url 'https://www.petz.com.br'.</msg>
+<status status="PASS" starttime="20220516 21:59:18.140" endtime="20220516 21:59:23.667"/>
+</kw>
+<status status="PASS" starttime="20220516 21:59:18.140" endtime="20220516 21:59:23.667"/>
+</kw>
+<kw name="Quando escrevo &quot;Coleira&quot; na barra de pesquisa" sourcename="Quando escrevo &quot;${palavra_chave}&quot; na barra de pesquisa">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${palavra_chave}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220516 21:59:23.668" level="INFO">${palavra_chave} = Coleira</msg>
+<status status="PASS" starttime="20220516 21:59:23.668" endtime="20220516 21:59:23.668"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>name = q</arg>
+<arg>30000ms</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220516 21:59:23.668" endtime="20220516 21:59:23.697"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name = q</arg>
+<arg>${palavra_chave}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 21:59:23.697" level="INFO">Typing text 'Coleira' into text field 'name = q'.</msg>
+<status status="PASS" starttime="20220516 21:59:23.697" endtime="20220516 21:59:23.768"/>
+</kw>
+<status status="PASS" starttime="20220516 21:59:23.668" endtime="20220516 21:59:23.768"/>
+</kw>
+<kw name="E aperto a tecla Enter">
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>name = q</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220425 21:48:35.276" level="INFO">Sending key(s) ('ENTER',) to name = q element.</msg>
-<msg timestamp="20220425 21:48:35.569" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20220425 21:48:35.569" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20220425 21:48:35.276" endtime="20220425 21:48:37.744"/>
+<msg timestamp="20220516 21:59:23.769" level="INFO">Sending key(s) ('ENTER',) to name = q element.</msg>
+<msg timestamp="20220516 21:59:24.164" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20220516 21:59:24.164" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20220516 21:59:23.769" endtime="20220516 21:59:24.794"/>
 </kw>
-<status status="PASS" starttime="20220425 21:48:35.173" endtime="20220425 21:48:37.745"/>
+<status status="PASS" starttime="20220516 21:59:23.769" endtime="20220516 21:59:24.794"/>
 </kw>
-<kw name="Validar se aparece no titulo da guia o resultado esperado">
-<kw name="${titulo} = get title">
-<msg timestamp="20220425 21:48:37.750" level="FAIL">No keyword with name '${titulo} = get title' found.</msg>
-<status status="FAIL" starttime="20220425 21:48:37.750" endtime="20220425 21:48:37.750"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${title}</arg>
+<kw name="Entao exibe um grid e a frase do resultado esperado">
+<kw name="Convert To Upper Case" library="String">
+<var>${palavra_chave_upper}</var>
 <arg>${palavra_chave}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="NOT RUN" starttime="20220425 21:48:37.750" endtime="20220425 21:48:37.750"/>
+<doc>Converts string to upper case.</doc>
+<msg timestamp="20220516 21:59:24.795" level="INFO">${palavra_chave_upper} = COLEIRA</msg>
+<status status="PASS" starttime="20220516 21:59:24.795" endtime="20220516 21:59:24.795"/>
 </kw>
-<status status="FAIL" starttime="20220425 21:48:37.745" endtime="20220425 21:48:37.751"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css = h1.h2Categoria.nomeCategoria</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 21:59:24.795" endtime="20220516 21:59:26.722"/>
 </kw>
-<kw name="Fechar o browser">
-<status status="NOT RUN" starttime="20220425 21:48:37.751" endtime="20220425 21:48:37.751"/>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>css = h1.h2Categoria.nomeCategoria</arg>
+<arg>RESULTADOS PARA "${palavra_chave_upper}"</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220516 21:59:26.738" level="INFO">Element 'css = h1.h2Categoria.nomeCategoria' contains text 'RESULTADOS PARA "COLEIRA"'.</msg>
+<status status="PASS" starttime="20220516 21:59:26.722" endtime="20220516 21:59:26.738"/>
+</kw>
+<status status="PASS" starttime="20220516 21:59:24.795" endtime="20220516 21:59:26.739"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220516 21:59:26.739" endtime="20220516 21:59:28.920"/>
 </kw>
 <tag>rapido</tag>
-<status status="FAIL" starttime="20220425 21:48:30.806" endtime="20220425 21:48:37.751">No keyword with name '${titulo} = get title' found.</status>
+<status status="PASS" starttime="20220516 21:59:18.139" endtime="20220516 21:59:28.921"/>
 </test>
-<doc>Teste de consulta no buscador Google
-abre o navegador Chrome
-e raliza a consulta</doc>
-<status status="FAIL" starttime="20220425 21:48:30.208" endtime="20220425 21:48:37.752"/>
+<test id="s1-t3" name="Compra de Produto" line="29">
+<kw name="Dado que acesso o site como cliente">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 21:59:28.927" level="INFO">Opening browser 'Chrome' to base url 'https://www.petz.com.br'.</msg>
+<status status="PASS" starttime="20220516 21:59:28.927" endtime="20220516 21:59:34.277"/>
+</kw>
+<status status="PASS" starttime="20220516 21:59:28.926" endtime="20220516 21:59:34.277"/>
+</kw>
+<kw name="Quando esccrevo &quot;Pote&quot; na barra de pesquisa">
+<msg timestamp="20220516 21:59:34.280" level="FAIL">No keyword with name 'Quando esccrevo "Pote" na barra de pesquisa' found.</msg>
+<status status="FAIL" starttime="20220516 21:59:34.280" endtime="20220516 21:59:34.280"/>
+</kw>
+<kw name="E aperto a tecla Enter">
+<status status="NOT RUN" starttime="20220516 21:59:34.281" endtime="20220516 21:59:34.281"/>
+</kw>
+<kw name="Entao exibe um grid e a frase do resultado esperado">
+<status status="NOT RUN" starttime="20220516 21:59:34.281" endtime="20220516 21:59:34.281"/>
+</kw>
+<kw name="Quando Seleciono o produto &quot;Porta Ração Petz Rosa 1kg&quot;" sourcename="Quando Seleciono o produto &quot;${produto}&quot;">
+<status status="NOT RUN" starttime="20220516 21:59:34.281" endtime="20220516 21:59:34.281"/>
+</kw>
+<kw name="Entao exibe a pagina do produto com preco de &quot;R$ 59,99&quot;" sourcename="Entao exibe a pagina do produto com preco de &quot;${preco}&quot;">
+<status status="NOT RUN" starttime="20220516 21:59:34.281" endtime="20220516 21:59:34.281"/>
+</kw>
+<kw name="Quando mudo a quantidade do produto para &quot;2&quot;">
+<status status="NOT RUN" starttime="20220516 21:59:34.281" endtime="20220516 21:59:34.281"/>
+</kw>
+<kw name="E clico no botao Adicionar no Carrinho">
+<status status="NOT RUN" starttime="20220516 21:59:34.282" endtime="20220516 21:59:34.282"/>
+</kw>
+<kw name="Entao exibe a pagina do carrinho com o total de &quot;R$ 119,98&quot;" sourcename="Entao exibe a pagina do carrinho com o total de &quot;${preco_total}&quot;">
+<status status="NOT RUN" starttime="20220516 21:59:34.282" endtime="20220516 21:59:34.282"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220516 21:59:34.283" endtime="20220516 21:59:36.458"/>
+</kw>
+<tag>rapido</tag>
+<status status="FAIL" starttime="20220516 21:59:28.925" endtime="20220516 21:59:36.459">No keyword with name 'Quando esccrevo "Pote" na barra de pesquisa' found.</status>
+</test>
+<doc>Consultas no site da Petz</doc>
+<status status="FAIL" starttime="20220516 21:59:03.236" endtime="20220516 21:59:36.463"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">rapido</stat>
+<stat pass="1" fail="2" skip="0">rapido</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Consulta Google">Consulta Google</stat>
+<stat pass="1" fail="2" skip="0" id="s1" name="Consulta Petz">Consulta Petz</stat>
 </suite>
 </statistics>
 <errors>
