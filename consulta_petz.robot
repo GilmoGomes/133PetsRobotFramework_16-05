@@ -17,7 +17,7 @@ Consulta Produto com Clique na Lupa
     Quando escrevo "Ração" na barra de pesquisa
     E clico no botao da lupa
     Entao exibe um grid e a frase do resultado esperado
-    Feche o browser
+    #Feche o browser
 
 Consulta Produto Apertando Enter
     [Tags]    rapido
@@ -42,6 +42,11 @@ Compra de Produto
 *** Keywords ***
 Dado que acesso o site como cliente
     open browser    ${url}  ${browser}
+    close browser   ${url}  ${browser}
+
+E concordo com a Politica de Privacidade
+    click button    id  = aceiteLgpd
+
 
 Quando escrevo "${palavra_chave}" na barra de pesquisa
     set test variable       ${palavra_chave}
@@ -52,7 +57,6 @@ E clico no botao da lupa
     click button        class = button-search
 
 Entao exibe um grid e a frase do resultado esperado
-    # ARROZ                                        arroz
     ${palavra_chave_upper}  convert to upper case  ${palavra_chave}
     wait until element is visible   css = h1.h2Categoria.nomeCategoria
     element should contain          css = h1.h2Categoria.nomeCategoria      RESULTADOS PARA "${palavra_chave_upper}"
@@ -79,5 +83,5 @@ E clico no botao Adicionar no Carrinho
 
 Entao exibe a pagina do carrinho com o total de "${preco_total}"
     wait until element is visible   xpath = //div[@id="cart-item-147547"]  3000ms
-    element should contain          xpath = //div[@id="cart-item-147547"]   ${produto}
+    element should contain          xpath = //div[@id="cart-item-147547"]  ${produto}
     element should contain          class = tx-blue.money
