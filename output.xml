@@ -1,167 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220519 00:06:04.630" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220519 00:07:35.726" rpa="false" schemaversion="3">
 <suite id="s1" name="Compra Blazedemo" source="C:\Users\gilmo.gomes\PycharmProjects\133PetsRobotFramework\compra_blazedemo.robot">
 <test id="s1-t1" name="Compra de Passagem" line="17">
 <kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220519 00:06:04.916" level="INFO">Opening browser 'chrome' to base url 'https://blazedemo.com/'.</msg>
-<status status="PASS" starttime="20220519 00:06:04.916" endtime="20220519 00:06:09.106"/>
+<msg timestamp="20220519 00:07:35.925" level="INFO">Opening browser 'chrome' to base url 'https://blazedemo.com/'.</msg>
+<status status="PASS" starttime="20220519 00:07:35.925" endtime="20220519 00:07:38.494"/>
 </kw>
 <kw name="Dado que acesso o site blazedemo">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath = //h1</arg>
 <arg>30000ms</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220519 00:06:09.107" endtime="20220519 00:06:09.134"/>
+<status status="PASS" starttime="20220519 00:07:38.495" endtime="20220519 00:07:38.522"/>
 </kw>
-<status status="PASS" starttime="20220519 00:06:09.106" endtime="20220519 00:06:09.134"/>
+<status status="PASS" starttime="20220519 00:07:38.494" endtime="20220519 00:07:38.522"/>
 </kw>
 <kw name="Quando seleciono a origem como &quot;São Paolo&quot;" sourcename="Quando seleciono a origem como &quot;${origem}&quot;">
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${origem}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20220519 00:06:09.135" level="INFO">${origem} = São Paolo</msg>
-<status status="PASS" starttime="20220519 00:06:09.135" endtime="20220519 00:06:09.135"/>
+<msg timestamp="20220519 00:07:38.522" level="INFO">${origem} = São Paolo</msg>
+<status status="PASS" starttime="20220519 00:07:38.522" endtime="20220519 00:07:38.522"/>
 </kw>
 <kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>name = fromPort</arg>
 <arg>${origem}</arg>
 <doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220519 00:06:09.135" level="INFO">Selecting options from selection list 'name = fromPort' by label São Paolo.</msg>
-<status status="PASS" starttime="20220519 00:06:09.135" endtime="20220519 00:06:09.182"/>
+<msg timestamp="20220519 00:07:38.523" level="INFO">Selecting options from selection list 'name = fromPort' by label São Paolo.</msg>
+<status status="PASS" starttime="20220519 00:07:38.522" endtime="20220519 00:07:38.568"/>
 </kw>
-<status status="PASS" starttime="20220519 00:06:09.134" endtime="20220519 00:06:09.182"/>
+<status status="PASS" starttime="20220519 00:07:38.522" endtime="20220519 00:07:38.568"/>
 </kw>
 <kw name="E o destino como &quot;London&quot;" sourcename="E o destino como &quot;${destino}&quot;">
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${destino}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20220519 00:06:09.183" level="INFO">${destino} = London</msg>
-<status status="PASS" starttime="20220519 00:06:09.182" endtime="20220519 00:06:09.183"/>
+<msg timestamp="20220519 00:07:38.569" level="INFO">${destino} = London</msg>
+<status status="PASS" starttime="20220519 00:07:38.568" endtime="20220519 00:07:38.569"/>
 </kw>
 <kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>name = toPort</arg>
 <arg>${destino}</arg>
 <doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220519 00:06:09.183" level="INFO">Selecting options from selection list 'name = toPort' by label London.</msg>
-<status status="PASS" starttime="20220519 00:06:09.183" endtime="20220519 00:06:09.233"/>
+<msg timestamp="20220519 00:07:38.569" level="INFO">Selecting options from selection list 'name = toPort' by label London.</msg>
+<status status="PASS" starttime="20220519 00:07:38.569" endtime="20220519 00:07:38.618"/>
 </kw>
-<status status="PASS" starttime="20220519 00:06:09.182" endtime="20220519 00:06:09.233"/>
+<status status="PASS" starttime="20220519 00:07:38.568" endtime="20220519 00:07:38.618"/>
 </kw>
 <kw name="E clico no botão Find Flights">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>class = btn.btn-primary</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220519 00:06:09.234" level="INFO">Clicking button 'class = btn.btn-primary'.</msg>
-<status status="PASS" starttime="20220519 00:06:09.234" endtime="20220519 00:06:09.797"/>
+<msg timestamp="20220519 00:07:38.619" level="INFO">Clicking button 'class = btn.btn-primary'.</msg>
+<status status="PASS" starttime="20220519 00:07:38.619" endtime="20220519 00:07:38.984"/>
 </kw>
-<status status="PASS" starttime="20220519 00:06:09.233" endtime="20220519 00:06:09.797"/>
+<status status="PASS" starttime="20220519 00:07:38.618" endtime="20220519 00:07:38.984"/>
 </kw>
 <kw name="Entao exibe uma lista de voos para o trecho desejado">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath = //h3</arg>
 <arg>30000ms</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220519 00:06:09.797" endtime="20220519 00:06:09.822"/>
+<status status="PASS" starttime="20220519 00:07:38.985" endtime="20220519 00:07:39.017"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>xpath = //h3</arg>
 <arg>Flights from ${origem} to ${destino}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220519 00:06:09.837" level="INFO">Element 'xpath = //h3' contains text 'Flights from São Paolo to London'.</msg>
-<status status="PASS" starttime="20220519 00:06:09.822" endtime="20220519 00:06:09.837"/>
+<msg timestamp="20220519 00:07:39.031" level="INFO">Element 'xpath = //h3' contains text 'Flights from São Paolo to London'.</msg>
+<status status="PASS" starttime="20220519 00:07:39.017" endtime="20220519 00:07:39.032"/>
 </kw>
-<status status="PASS" starttime="20220519 00:06:09.797" endtime="20220519 00:06:09.837"/>
+<status status="PASS" starttime="20220519 00:07:38.984" endtime="20220519 00:07:39.032"/>
 </kw>
 <kw name="Quando seleciono o primeiro voo disponivel">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>class = btn.btn-small</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220519 00:06:09.838" level="INFO">Clicking button 'class = btn.btn-small'.</msg>
-<status status="PASS" starttime="20220519 00:06:09.838" endtime="20220519 00:06:10.285"/>
+<msg timestamp="20220519 00:07:39.032" level="INFO">Clicking button 'class = btn.btn-small'.</msg>
+<status status="PASS" starttime="20220519 00:07:39.032" endtime="20220519 00:07:39.428"/>
 </kw>
-<status status="PASS" starttime="20220519 00:06:09.838" endtime="20220519 00:06:10.285"/>
+<status status="PASS" starttime="20220519 00:07:39.032" endtime="20220519 00:07:39.428"/>
 </kw>
 <kw name="E preencho o primeiro nome como &quot;Juca&quot;" sourcename="E preencho o primeiro nome como &quot;${nome}&quot;">
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <arg>id = inputName</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220519 00:06:10.287" endtime="20220519 00:06:10.318"/>
+<status status="PASS" starttime="20220519 00:07:39.428" endtime="20220519 00:07:39.458"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id = inputName</arg>
 <arg>${nome}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220519 00:06:10.318" level="INFO">Typing text 'Juca' into text field 'id = inputName'.</msg>
-<status status="PASS" starttime="20220519 00:06:10.318" endtime="20220519 00:06:10.379"/>
+<msg timestamp="20220519 00:07:39.458" level="INFO">Typing text 'Juca' into text field 'id = inputName'.</msg>
+<status status="PASS" starttime="20220519 00:07:39.458" endtime="20220519 00:07:39.520"/>
 </kw>
-<status status="PASS" starttime="20220519 00:06:10.287" endtime="20220519 00:06:10.380"/>
+<status status="PASS" starttime="20220519 00:07:39.428" endtime="20220519 00:07:39.520"/>
 </kw>
 <kw name="E seleciono a bandeira como &quot;American Express&quot;" sourcename="E seleciono a bandeira como &quot;${bandeira}&quot;">
 <kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>id = cardType</arg>
 <arg>${bandeira}</arg>
 <doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220519 00:06:10.380" level="INFO">Selecting options from selection list 'id = cardType' by label American Express.</msg>
-<status status="PASS" starttime="20220519 00:06:10.380" endtime="20220519 00:06:10.430"/>
+<msg timestamp="20220519 00:07:39.521" level="INFO">Selecting options from selection list 'id = cardType' by label American Express.</msg>
+<status status="PASS" starttime="20220519 00:07:39.521" endtime="20220519 00:07:39.568"/>
 </kw>
-<status status="PASS" starttime="20220519 00:06:10.380" endtime="20220519 00:06:10.430"/>
+<status status="PASS" starttime="20220519 00:07:39.520" endtime="20220519 00:07:39.568"/>
 </kw>
 <kw name="E marco a opcao Remember">
 <kw name="Select Checkbox" library="SeleniumLibrary">
 <arg>id = rememberMe</arg>
 <doc>Selects the checkbox identified by ``locator``.</doc>
-<msg timestamp="20220519 00:06:10.431" level="INFO">Selecting checkbox 'id = rememberMe'.</msg>
-<status status="PASS" starttime="20220519 00:06:10.431" endtime="20220519 00:06:10.486"/>
+<msg timestamp="20220519 00:07:39.569" level="INFO">Selecting checkbox 'id = rememberMe'.</msg>
+<status status="PASS" starttime="20220519 00:07:39.569" endtime="20220519 00:07:39.624"/>
 </kw>
-<status status="PASS" starttime="20220519 00:06:10.431" endtime="20220519 00:06:10.486"/>
+<status status="PASS" starttime="20220519 00:07:39.568" endtime="20220519 00:07:39.624"/>
 </kw>
 <kw name="E clico em Purchase Flight">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>class = btn.btn-primary</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220519 00:06:10.487" level="INFO">Clicking button 'class = btn.btn-primary'.</msg>
-<status status="PASS" starttime="20220519 00:06:10.487" endtime="20220519 00:06:10.961"/>
+<msg timestamp="20220519 00:07:39.625" level="INFO">Clicking button 'class = btn.btn-primary'.</msg>
+<status status="PASS" starttime="20220519 00:07:39.625" endtime="20220519 00:07:40.050"/>
 </kw>
-<status status="PASS" starttime="20220519 00:06:10.486" endtime="20220519 00:06:10.961"/>
+<status status="PASS" starttime="20220519 00:07:39.625" endtime="20220519 00:07:40.050"/>
 </kw>
 <kw name="Entao exibe a mensagem de obrigado">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath = //h1</arg>
 <arg>30000ms</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220519 00:06:10.962" endtime="20220519 00:06:10.980"/>
+<status status="PASS" starttime="20220519 00:07:40.051" endtime="20220519 00:07:40.070"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>xpath = //h1</arg>
 <arg>Thank you for your purchase today!</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220519 00:06:10.995" level="INFO">Element 'xpath = //h1' contains text 'Thank you for your purchase today!'.</msg>
-<status status="PASS" starttime="20220519 00:06:10.980" endtime="20220519 00:06:10.995"/>
+<msg timestamp="20220519 00:07:40.085" level="INFO">Element 'xpath = //h1' contains text 'Thank you for your purchase today!'.</msg>
+<status status="PASS" starttime="20220519 00:07:40.070" endtime="20220519 00:07:40.085"/>
 </kw>
-<status status="PASS" starttime="20220519 00:06:10.962" endtime="20220519 00:06:10.995"/>
+<status status="PASS" starttime="20220519 00:07:40.051" endtime="20220519 00:07:40.085"/>
 </kw>
 <kw name="E o valor como &quot;555 USD&quot;" sourcename="E o valor como &quot;${preco}&quot;">
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>xpath = //tbody/tr[3]/td[2]</arg>
 <arg>${preco}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220519 00:06:11.014" level="INFO">Element 'xpath = //tbody/tr[3]/td[2]' contains text '555 USD'.</msg>
-<status status="PASS" starttime="20220519 00:06:10.996" endtime="20220519 00:06:11.014"/>
+<msg timestamp="20220519 00:07:40.103" level="INFO">Element 'xpath = //tbody/tr[3]/td[2]' contains text '555 USD'.</msg>
+<status status="PASS" starttime="20220519 00:07:40.086" endtime="20220519 00:07:40.103"/>
 </kw>
-<status status="PASS" starttime="20220519 00:06:10.996" endtime="20220519 00:06:11.014"/>
+<status status="PASS" starttime="20220519 00:07:40.085" endtime="20220519 00:07:40.103"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220519 00:06:11.014" endtime="20220519 00:06:13.144"/>
+<status status="PASS" starttime="20220519 00:07:40.104" endtime="20220519 00:07:42.203"/>
 </kw>
 <tag>Regressao</tag>
-<status status="PASS" starttime="20220519 00:06:04.915" endtime="20220519 00:06:13.145"/>
+<status status="PASS" starttime="20220519 00:07:35.924" endtime="20220519 00:07:42.203"/>
 </test>
 <doc>Suite description</doc>
-<status status="PASS" starttime="20220519 00:06:04.631" endtime="20220519 00:06:13.147"/>
+<status status="PASS" starttime="20220519 00:07:35.728" endtime="20220519 00:07:42.205"/>
 </suite>
 <statistics>
 <total>

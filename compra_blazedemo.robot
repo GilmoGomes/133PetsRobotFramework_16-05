@@ -34,7 +34,6 @@ Compra de Passagem
 Dado que acesso o site blazedemo
     wait until element is visible       xpath = //h1    30000ms
 
-
 Quando seleciono a origem como "${origem}"
     set test Variable   ${origem}
     select from list by label   name = fromPort     ${origem}
