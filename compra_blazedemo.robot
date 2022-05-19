@@ -1,6 +1,18 @@
 *** Settings ***
 Documentation    Suite description
 
+Library     SeleniumLibrary
+
+### inicio fim ###
+Test Setup      open browser    ${url}  ${browser}
+Test Teardown   close browser
+
+
+*** Variables ***
+${browser}      chrome
+${url}          https://blazedemo.com/
+
+
 *** Test Cases ***
 Compra de Passagem
     [Tags]    Regressao
@@ -19,5 +31,47 @@ Compra de Passagem
 
 
 *** Keywords ***
-Provided precondition
-    Setup system under test
+Dado que acesso o site blazedemo
+    wait until element is visible       xpath = //h1    70000ms
+
+
+Quando seleciono a origem como "${origem}"
+    set test Variable   ${origem}
+    select from list by label   name = fromPort     ${origem}
+
+E o destino como "${destino}"
+    set test Variable   ${destino}
+    select from list by label   name = toPort       ${destino}
+
+
+E clico no botão Find Flights
+    click button                class = btn.btn-primary
+
+Entao exibe uma lista de voos para o trecho desejado
+    wait until element is visible   xpath = //h3        70000ms
+    element should contain          xpath = //h3        Flights from ${origem} to ${destino}
+
+Quando seleciono o primeiro voo disponivel
+    click button         class = btn.btn-small
+
+E preencho o primeiro nome como "${nome}"
+        wait until element is enabled       id = inputName
+        input text      id = inputName     ${nome}
+
+E seleciono a bandeira como "${bandeira}"
+        select from list by label       id = cardType  ${bandeira}
+
+E marco a opcao Remember
+        select checkbox     id = rememberMe
+
+E clico em Purchase Flight
+        click button        class = btn.btn-primary
+
+Entao exibe a mensagem de obrigado
+    wait until element is visible   xpath = //h1   70000ms
+    element should contain          xpath = //h1   Thank you for your purchase today!
+
+E o valor como "${preco}"
+    element should contain          xpath = //tbody/tr[3]/td[2]     ${preco}
+
+
