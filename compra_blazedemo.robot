@@ -32,7 +32,7 @@ Compra de Passagem
 
 *** Keywords ***
 Dado que acesso o site blazedemo
-    wait until element is visible       xpath = //h1    70000ms
+    wait until element is visible       xpath = //h1    30000ms
 
 
 Quando seleciono a origem como "${origem}"
@@ -48,7 +48,7 @@ E clico no botão Find Flights
     click button                class = btn.btn-primary
 
 Entao exibe uma lista de voos para o trecho desejado
-    wait until element is visible   xpath = //h3        70000ms
+    wait until element is visible   xpath = //h3        30000ms
     element should contain          xpath = //h3        Flights from ${origem} to ${destino}
 
 Quando seleciono o primeiro voo disponivel
@@ -68,7 +68,7 @@ E clico em Purchase Flight
         click button        class = btn.btn-primary
 
 Entao exibe a mensagem de obrigado
-    wait until element is visible   xpath = //h1   70000ms
+    wait until element is visible   xpath = //h1   30000ms
     element should contain          xpath = //h1   Thank you for your purchase today!
 
 E o valor como "${preco}"
